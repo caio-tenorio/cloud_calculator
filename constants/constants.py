@@ -1,0 +1,1 @@
+MEM_USAGE_CMD = "free -m | awk '{if(NR==2) print $3}'"

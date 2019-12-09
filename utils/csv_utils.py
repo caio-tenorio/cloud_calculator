@@ -54,6 +54,7 @@ def get_sum_of_field(field, stats_list):
     _sum = sum(field_values)
     return _sum
 
+
 def __get_list_of_all_values_of_a_field(field, stats_list):
     field_values = list()
     for row in stats_list:

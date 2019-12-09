@@ -12,7 +12,6 @@ def calculate_stats():
     mem_avg = sum(mem_list) / len(mem_list)
     mem_max = float(max(mem_list)/1000.00)
     received_data_avg = get_average_of_field('recv', stats_list)
-    sended_data_avg = get_average_of_field('send', stats_list)
     sum_sent_data = get_sum_of_field('send', stats_list)
 
     stats_dict["rec_avg"] = received_data_avg
@@ -45,11 +44,8 @@ def calculate_stats():
     for offer in offers_list:
         price = float(offer[9]) * 730
         total = float(price) + float(network_cost)
-        print "Instance type: " + offer[18] + ", Cost: " + str(total) + ", USD per month " + ", CPU: " + offer[22] + ", CPU cores: " + offer[21] + ", Memory: " + offer[24] + ", Storage: " + offer[25]
-
-        # TODO: printar nome da maquina e custo total
-
-
+        print "Instance type: " + offer[18] + ", Cost: " + str(total) + ", USD per month " + ", CPU: " + offer[22] + \
+              ", CPU cores: " + offer[21] + ", Memory: " + offer[24] + ", Storage: " + offer[25]
 
     run_cmd('rm {}'.format(CSV_PATH))
     run_cmd('rm {}'.format(MEM_USAGE_PATH))
